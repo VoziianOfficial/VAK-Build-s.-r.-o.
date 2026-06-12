@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initCookieBanner();
     initAddressLinks();
     initSectionRail();
+    initSectionRailTheme();
 });
 
 function initLucideIcons() {
@@ -332,4 +333,32 @@ function initSectionRail() {
     );
 
     sections.forEach((item) => observer.observe(item.section));
+}
+
+function initSectionRailTheme() {
+    const rail = document.querySelector("[data-section-rail]");
+    if (!rail) return;
+
+    const lightSections = new Set(["about", "process"]);
+    const sections = Array.from(document.querySelectorAll("section[id]"));
+
+    if (!sections.length) return;
+
+    const updateRailTheme = () => {
+        const checkPoint = window.innerHeight * 0.5;
+
+        const currentSection = sections.find((section) => {
+            const rect = section.getBoundingClientRect();
+            return rect.top <= checkPoint && rect.bottom >= checkPoint;
+        });
+
+        if (!currentSection) return;
+
+        rail.classList.toggle("is-on-light", lightSections.has(currentSection.id));
+    };
+
+    updateRailTheme();
+
+    window.addEventListener("scroll", updateRailTheme, { passive: true });
+    window.addEventListener("resize", updateRailTheme);
 }
