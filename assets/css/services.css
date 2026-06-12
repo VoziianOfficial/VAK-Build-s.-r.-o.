@@ -159,6 +159,7 @@
 
 .service-hero__chips {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 10px;
     margin-top: 30px;
@@ -1359,3 +1360,70 @@
         animation: none;
     }
 }
+
+/* Service hero — center only title, text and buttons on tablet/mobile */
+
+@media (max-width: 1120px) {
+
+    .service-hero h1,
+    .service-hero__text {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    .service-hero__actions {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 560px) {
+    .service-hero__actions {
+        align-items: center;
+    }
+
+    .service-hero__actions .btn {
+        width: min(100%, 360px);
+        justify-content: space-between;
+    }
+}
+
+/* Service hero — mobile buttons in one row */
+
+@media (max-width: 560px) {
+    .service-hero__actions {
+        display: flex;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        width: 100%;
+    }
+
+    .service-hero__actions .btn {
+        flex: 1 1 0;
+        width: auto !important;
+        min-width: 0;
+        min-height: 42px;
+        padding: 10px 10px 10px 14px;
+        font-size: 11px;
+        line-height: 1;
+        white-space: nowrap;
+        justify-content: space-between;
+        gap: 8px;
+    }
+
+    .service-hero__actions .btn__arrow {
+        width: 30px;
+        height: 30px;
+        flex: 0 0 30px;
+    }
+
+    .service-hero__actions .btn__arrow i,
+    .service-hero__actions .btn__arrow svg {
+        width: 15px;
+        height: 15px;
+    }
+}
+
