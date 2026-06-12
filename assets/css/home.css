@@ -2116,3 +2116,45 @@
         0 0 0 8px rgba(199, 244, 58, 0.14),
         0 0 24px rgba(199, 244, 58, 0.42);
 }
+
+/* Solutions heading logo mark on desktop */
+
+@media (min-width: 981px) {
+    .home-solutions .section-heading {
+        position: relative;
+        max-width: 100%;
+        min-height: 190px;
+        padding-right: clamp(190px, 22vw, 320px);
+    }
+
+    .home-solutions .section-heading::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 50%;
+        width: clamp(150px, 17vw, 250px);
+        aspect-ratio: 1;
+        background-image: url("../icons/logo.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        opacity: 0.22;
+        transform: translateY(-50%) rotate(-8deg);
+        pointer-events: none;
+        filter: drop-shadow(0 0 34px rgba(199, 244, 58, 0.22));
+    }
+
+    .home-solutions .section-heading h2 {
+        max-width: 1180px;
+    }
+
+    .home-solutions .section-heading p {
+        max-width: 780px;
+    }
+}
+
+@media (max-width: 980px) {
+    .home-solutions .section-heading::after {
+        display: none;
+    }
+}
