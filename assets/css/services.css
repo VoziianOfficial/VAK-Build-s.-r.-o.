@@ -1272,3 +1272,90 @@
         padding: 24px;
     }
 }
+
+/* Service hero — bigger animated orbit around photo */
+
+.service-hero__visual {
+    position: relative;
+}
+
+.service-hero__orbit {
+    position: absolute;
+    right: -7%;
+    top: -38px;
+    z-index: 1;
+    width: min(116%, 680px);
+    aspect-ratio: 1;
+    border: 1px solid rgba(199, 244, 58, 0.3);
+    border-radius: 50%;
+    box-shadow:
+        0 0 36px rgba(199, 244, 58, 0.14),
+        inset 0 0 42px rgba(199, 244, 58, 0.08);
+    animation: serviceHeroOrbitRotate 40s linear infinite;
+    pointer-events: none;
+}
+
+.service-hero__orbit::before,
+.service-hero__orbit::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.service-hero__orbit::before {
+    inset: 54px;
+    border: 1px dashed rgba(255, 255, 255, 0.18);
+}
+
+.service-hero__orbit::after {
+    inset: 112px;
+    border: 1px dashed rgba(199, 244, 58, 0.22);
+    box-shadow: inset 0 0 28px rgba(199, 244, 58, 0.06);
+}
+
+.service-hero__image {
+    position: relative;
+    z-index: 2;
+}
+
+.service-hero__floating {
+    position: relative;
+    z-index: 4;
+}
+
+@keyframes serviceHeroOrbitRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* tablet */
+
+@media (max-width: 1120px) {
+    .service-hero__orbit {
+        right: 0;
+        top: -28px;
+        width: min(105%, 620px);
+    }
+}
+
+/* mobile */
+
+@media (max-width: 720px) {
+    .service-hero__orbit {
+        right: -12%;
+        top: -34px;
+        width: 122%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .service-hero__orbit {
+        animation: none;
+    }
+}
