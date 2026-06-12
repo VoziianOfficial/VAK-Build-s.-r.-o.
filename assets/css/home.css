@@ -2158,3 +2158,65 @@
         display: none;
     }
 }
+
+/* Smooth rotating logo in Solutions heading */
+
+@media (min-width: 981px) {
+    .home-solutions .section-heading::after {
+        animation: vakSolutionsLogoRotate 34s linear infinite;
+        transform-origin: center;
+        will-change: transform;
+    }
+}
+
+@keyframes vakSolutionsLogoRotate {
+    from {
+        transform: translateY(-50%) rotate(-8deg);
+    }
+
+    to {
+        transform: translateY(-50%) rotate(352deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .home-solutions .section-heading::after {
+        animation: none;
+        transform: translateY(-50%) rotate(-8deg);
+    }
+}
+
+/* Solution panel h3 accent words */
+
+.solution-panel h3 {
+    color: rgba(255, 255, 255, 0.86);
+}
+
+.solution-panel h3 span {
+    position: relative;
+    display: inline;
+    color: var(--color-accent);
+    text-shadow: 0 0 28px rgba(199, 244, 58, 0.24);
+}
+
+.solution-panel h3 span::after {
+    content: "";
+    position: absolute;
+    left: 0.02em;
+    right: 0.02em;
+    bottom: 0.02em;
+    height: 0.12em;
+    border-radius: 999px;
+    background: rgba(199, 244, 58, 0.18);
+    z-index: -1;
+}
+
+/* Make solution panel h3 smaller and more elegant */
+
+.solution-panel h3 {
+    max-width: 680px;
+    font-size: clamp(30px, 3.4vw, 56px);
+    line-height: 1;
+    letter-spacing: -0.045em;
+}
+
