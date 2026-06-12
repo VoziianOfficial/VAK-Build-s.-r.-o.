@@ -1726,3 +1726,21 @@
         border-radius: 30px;
     }
 }
+
+/* Services: make cards sit in two clean rows */
+
+@media (min-width: 901px) {
+    .service-wall {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-auto-rows: auto;
+    }
+
+    .service-tile,
+    .service-tile--wide,
+    .service-tile--tall,
+    .service-tile--compact {
+        grid-column: auto;
+        grid-row: auto;
+        min-height: 360px;
+    }
+}
