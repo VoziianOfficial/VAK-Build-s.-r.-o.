@@ -1220,3 +1220,56 @@ ol {
         flex-wrap: wrap;
     }
 }
+
+
+/* HARD REMOVE ALL SQUARE GRID PATTERNS ON HOME PAGE */
+
+.home-hero::before,
+.home-hero::after,
+.home-services::before,
+.home-services::after,
+.home-solutions::before,
+.home-solutions::after,
+.home-process::before,
+.home-process::after,
+.home-momentum::before,
+.home-momentum::after,
+.home-results::before,
+.home-results::after,
+.home-contact::before,
+.home-contact::after,
+.solution-panel::before,
+.solution-panel::after,
+.solution-panel-wrap::before,
+.solution-panel-wrap::after,
+.metrics-ribbon::before,
+.metrics-ribbon::after {
+    background-image: none !important;
+    background-size: auto !important;
+    opacity: 0 !important;
+}
+
+/* HARD REMOVE ALL SQUARE GRID PATTERNS ON SERVICE PAGES */
+
+.service-hero::before,
+.service-hero::after,
+.service-overview::before,
+.service-overview::after,
+.service-diagnostics::before,
+.service-diagnostics::after,
+.service-method::before,
+.service-method::after,
+.service-deliverables::before,
+.service-deliverables::after,
+.service-result::before,
+.service-result::after,
+.service-tools::before,
+.service-tools::after,
+.service-related::before,
+.service-related::after,
+.service-cta::before,
+.service-cta::after {
+    background-image: none !important;
+    background-size: auto !important;
+    opacity: 0 !important;
+}
