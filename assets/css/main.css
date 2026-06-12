@@ -1313,3 +1313,67 @@ ol {
         0 0 18px rgba(199, 244, 58, 0.26),
         0 18px 42px rgba(199, 244, 58, 0.16);
 }
+
+/* Section rail — visible on dark and light sections */
+
+.section-rail {
+    isolation: isolate;
+}
+
+.section-rail__link {
+    position: relative;
+}
+
+.section-rail__link::before {
+    border-color: rgba(255, 255, 255, 0.42);
+    background: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 0 0 5px rgba(5, 6, 7, 0.16);
+}
+
+.section-rail__label {
+    color: var(--color-white);
+    background: rgba(5, 6, 7, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+}
+
+.section-rail__link.is-active::before,
+.section-rail__link:hover::before {
+    border-color: var(--color-accent);
+    background: var(--color-accent);
+    box-shadow:
+        0 0 0 7px rgba(199, 244, 58, 0.16),
+        0 0 22px rgba(199, 244, 58, 0.38);
+}
+
+/* when rail is over light sections */
+
+.section-rail.is-on-light .section-rail__link::before {
+    border-color: rgba(5, 6, 7, 0.38);
+    background: rgba(5, 6, 7, 0.28);
+    box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.68);
+}
+
+.section-rail.is-on-light .section-rail__label {
+    color: var(--color-black);
+    background: rgba(244, 245, 241, 0.84);
+    border-color: rgba(5, 6, 7, 0.14);
+    box-shadow: 0 14px 34px rgba(5, 6, 7, 0.14);
+}
+
+.section-rail.is-on-light .section-rail__link.is-active::before,
+.section-rail.is-on-light .section-rail__link:hover::before {
+    border-color: var(--color-accent-dark);
+    background: var(--color-accent-dark);
+    box-shadow:
+        0 0 0 7px rgba(199, 244, 58, 0.2),
+        0 0 24px rgba(126, 168, 13, 0.34);
+}
+
+/* mobile: better hide rail if it crowds the page */
+
+@media (max-width: 1024px) {
+    .section-rail {
+        display: none;
+    }
+}
