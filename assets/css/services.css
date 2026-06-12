@@ -1455,3 +1455,418 @@
         max-width: 100%;
     }
 }
+
+/* Service method — open light route map, no card container */
+
+.service-method.method-open {
+    position: relative;
+    padding: 82px 0 92px;
+    background:
+        radial-gradient(circle at 88% 10%, rgba(199, 244, 58, 0.24), transparent 24%),
+        radial-gradient(circle at 12% 88%, rgba(5, 6, 7, 0.055), transparent 28%),
+        linear-gradient(180deg, #f6f7f2 0%, #eceee5 100%);
+    color: var(--color-black);
+    overflow: hidden;
+}
+
+.service-method.method-open::before {
+    content: "ROUTE";
+    position: absolute;
+    right: -0.08em;
+    top: 22px;
+    color: rgba(5, 6, 7, 0.035);
+    font-family: var(--font-display);
+    font-size: clamp(90px, 15vw, 250px);
+    font-weight: 900;
+    line-height: 0.78;
+    letter-spacing: -0.1em;
+    pointer-events: none;
+}
+
+/* head */
+
+.method-open__head {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(320px, 0.45fr);
+    gap: clamp(28px, 5vw, 72px);
+    align-items: end;
+    margin-bottom: 28px;
+}
+
+.method-open__head .section-kicker {
+    grid-column: 1 / -1;
+    margin-bottom: -12px;
+}
+
+.method-open__head h2 {
+    max-width: 980px;
+    margin: 0;
+    color: var(--color-black);
+    font-family: var(--font-display);
+    font-size: clamp(42px, 5vw, 78px);
+    font-weight: 900;
+    line-height: 0.93;
+    letter-spacing: -0.075em;
+}
+
+.method-open__head>p {
+    max-width: 560px;
+    margin: 0 0 8px;
+    color: rgba(5, 6, 7, 0.62);
+    font-size: 16px;
+    font-weight: 650;
+    line-height: 1.65;
+}
+
+/* formula */
+
+.method-open__formula {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(5, 6, 7, 0.12);
+}
+
+.method-open__formula span {
+    color: rgba(5, 6, 7, 0.72);
+    font-size: 11px;
+    font-weight: 950;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.method-open__formula i {
+    width: 34px;
+    height: 2px;
+    border-radius: var(--radius-pill);
+    background: linear-gradient(90deg, var(--color-accent-dark), rgba(126, 168, 13, 0.12));
+}
+
+/* open route map */
+
+.method-open__map {
+    position: relative;
+    z-index: 2;
+    min-height: 360px;
+    margin-top: 16px;
+    border-top: 1px solid rgba(5, 6, 7, 0.14);
+    border-bottom: 1px solid rgba(5, 6, 7, 0.14);
+}
+
+.method-open__map::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 2px;
+    border-radius: var(--radius-pill);
+    background:
+        linear-gradient(90deg,
+            rgba(126, 168, 13, 0.18),
+            var(--color-accent-dark),
+            rgba(199, 244, 58, 0.38),
+            var(--color-accent-dark),
+            rgba(126, 168, 13, 0.18));
+    transform: translateY(-50%);
+    box-shadow: 0 0 28px rgba(199, 244, 58, 0.22);
+}
+
+.method-open__map::after {
+    content: "";
+    position: absolute;
+    left: 7%;
+    right: 7%;
+    top: 50%;
+    height: 160px;
+    border: 1px solid rgba(126, 168, 13, 0.12);
+    border-top: 0;
+    border-radius: 0 0 999px 999px;
+    transform: translateY(-20%);
+    pointer-events: none;
+}
+
+.method-open__point {
+    position: absolute;
+    left: var(--x);
+    width: min(230px, 18vw);
+    min-width: 170px;
+    transition:
+        transform var(--transition),
+        opacity var(--transition);
+}
+
+.method-open__point::before {
+    content: attr(data-step);
+    position: absolute;
+    right: 0;
+    color: rgba(5, 6, 7, 0.045);
+    font-family: var(--font-display);
+    font-size: clamp(52px, 6vw, 96px);
+    font-weight: 900;
+    line-height: 0.8;
+    letter-spacing: -0.08em;
+    pointer-events: none;
+    transition:
+        color var(--transition),
+        transform var(--transition);
+}
+
+.method-open__point--top {
+    bottom: calc(50% + 36px);
+}
+
+.method-open__point--bottom {
+    top: calc(50% + 42px);
+}
+
+.method-open__point--top::before {
+    top: -10px;
+}
+
+.method-open__point--bottom::before {
+    bottom: -6px;
+}
+
+.method-open__node {
+    position: absolute;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    border: 3px solid #f6f7f2;
+    border-radius: 50%;
+    background: var(--color-accent);
+    box-shadow:
+        0 0 0 9px rgba(199, 244, 58, 0.16),
+        0 0 26px rgba(126, 168, 13, 0.34);
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.method-open__point--top .method-open__node {
+    bottom: -43px;
+}
+
+.method-open__point--bottom .method-open__node {
+    top: -49px;
+}
+
+.method-open__point small {
+    position: relative;
+    z-index: 2;
+    display: block;
+    max-width: 170px;
+    margin-bottom: 10px;
+    color: var(--color-accent-dark);
+    font-size: 10px;
+    font-weight: 950;
+    letter-spacing: 0.15em;
+    line-height: 1.25;
+    text-transform: uppercase;
+}
+
+.method-open__point h3 {
+    position: relative;
+    z-index: 2;
+    max-width: 220px;
+    margin: 0;
+    color: var(--color-black);
+    font-family: var(--font-display);
+    font-size: clamp(25px, 2.25vw, 36px);
+    font-weight: 900;
+    line-height: 0.96;
+    letter-spacing: -0.06em;
+    transition:
+        color var(--transition),
+        transform var(--transition);
+}
+
+.method-open__point p {
+    position: relative;
+    z-index: 2;
+    max-width: 220px;
+    margin: 10px 0 0;
+    color: rgba(5, 6, 7, 0.58);
+    font-size: 13px;
+    font-weight: 650;
+    line-height: 1.5;
+}
+
+.method-open__point:hover {
+    transform: translateY(-4px);
+}
+
+.method-open__point:hover .method-open__node {
+    transform: scale(1.18);
+    box-shadow:
+        0 0 0 11px rgba(199, 244, 58, 0.2),
+        0 0 34px rgba(126, 168, 13, 0.44);
+}
+
+.method-open__point:hover::before {
+    color: rgba(126, 168, 13, 0.085);
+    transform: translateX(-8px);
+}
+
+.method-open__point:hover h3 {
+    color: var(--color-accent-dark);
+    transform: translateY(-3px);
+}
+
+/* tablet */
+
+@media (max-width: 1120px) {
+    .service-method.method-open {
+        padding: 76px 0;
+    }
+
+    .method-open__head {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        text-align: center;
+    }
+
+    .method-open__head h2,
+    .method-open__head>p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .method-open__formula {
+        justify-content: center;
+    }
+
+    .method-open__map {
+        display: grid;
+        gap: 0;
+        min-height: auto;
+        border-top: 1px solid rgba(5, 6, 7, 0.14);
+        border-bottom: 1px solid rgba(5, 6, 7, 0.14);
+    }
+
+    .method-open__map::before,
+    .method-open__map::after {
+        display: none;
+    }
+
+    .method-open__point,
+    .method-open__point--top,
+    .method-open__point--bottom {
+        position: relative;
+        left: auto;
+        top: auto;
+        bottom: auto;
+        width: 100%;
+        min-width: 0;
+        display: grid;
+        grid-template-columns: 130px minmax(0, 1fr);
+        gap: 18px 28px;
+        padding: 24px 72px 24px 0;
+        border-bottom: 1px solid rgba(5, 6, 7, 0.11);
+    }
+
+    .method-open__point:last-child {
+        border-bottom: 0;
+    }
+
+    .method-open__node,
+    .method-open__point--top .method-open__node,
+    .method-open__point--bottom .method-open__node {
+        position: absolute;
+        left: auto;
+        right: 18px;
+        top: 28px;
+        bottom: auto;
+    }
+
+    .method-open__point small {
+        grid-row: 1 / span 2;
+        max-width: 120px;
+        margin: 0;
+    }
+
+    .method-open__point h3,
+    .method-open__point p {
+        max-width: 100%;
+    }
+
+    .method-open__point::before,
+    .method-open__point--top::before,
+    .method-open__point--bottom::before {
+        right: 0;
+        top: 18px;
+        bottom: auto;
+    }
+}
+
+/* mobile */
+
+@media (max-width: 720px) {
+    .service-method.method-open {
+        padding: 66px 0;
+    }
+
+    .method-open__head h2 {
+        font-size: clamp(35px, 10vw, 52px);
+    }
+
+    .method-open__formula {
+        gap: 8px;
+    }
+
+    .method-open__formula span {
+        font-size: 9px;
+    }
+
+    .method-open__formula i {
+        width: 18px;
+    }
+
+    .method-open__point,
+    .method-open__point--top,
+    .method-open__point--bottom {
+        grid-template-columns: 1fr;
+        gap: 9px;
+        padding: 24px 46px 24px 0;
+    }
+
+    .method-open__point small {
+        grid-row: auto;
+        max-width: 100%;
+    }
+
+    .method-open__point h3 {
+        font-size: clamp(27px, 8vw, 38px);
+    }
+
+    .method-open__point p {
+        font-size: 13px;
+    }
+
+    .method-open__node,
+    .method-open__point--top .method-open__node,
+    .method-open__point--bottom .method-open__node {
+        right: 0;
+        top: 28px;
+        width: 13px;
+        height: 13px;
+    }
+
+    .method-open__point::before {
+        font-size: 50px;
+    }
+}
+
+/* Method section — lower route map */
+
+.method-open__map {
+    margin-top: 42px;
+}
