@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initAddressLinks();
     initSectionRail();
     initSectionRailTheme();
+    initFaqStripAccordion();
 });
 
 function initLucideIcons() {
@@ -361,4 +362,35 @@ function initSectionRailTheme() {
 
     window.addEventListener("scroll", updateRailTheme, { passive: true });
     window.addEventListener("resize", updateRailTheme);
+}
+
+function initFaqStripAccordion() {
+    const accordion = document.querySelector("[data-faq-strip]");
+    if (!accordion) return;
+
+    const items = Array.from(accordion.querySelectorAll(".faq-strip-item"));
+    if (!items.length) return;
+
+    const setItemState = (item, isOpen) => {
+        const button = item.querySelector("[data-faq-strip-trigger]");
+
+        item.classList.toggle("is-open", isOpen);
+
+        if (button) {
+            button.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        }
+    };
+
+    items.forEach((item) => {
+        const button = item.querySelector("[data-faq-strip-trigger]");
+        if (!button) return;
+
+        button.addEventListener("click", () => {
+            const isOpen = item.classList.contains("is-open");
+
+            items.forEach((currentItem) => {
+                setItemState(currentItem, !isOpen && currentItem === item);
+            });
+        });
+    });
 }
