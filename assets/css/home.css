@@ -5118,3 +5118,70 @@
         font-size: 14px;
     }
 }
+
+/* Services — only main service icons top-right */
+
+.service-tile {
+    position: relative;
+}
+
+.service-tile__content {
+    position: static;
+    z-index: auto;
+    align-content: end;
+}
+
+.service-tile--text .service-tile__content {
+    align-content: end;
+}
+
+.service-tile__content>span {
+    position: relative;
+    z-index: 3;
+    display: block;
+}
+
+.service-tile .service-tile__icon {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    z-index: 5;
+    width: 32px;
+    height: 32px;
+    color: var(--color-accent);
+    stroke-width: 1.8;
+    pointer-events: none;
+    transition:
+        transform var(--transition),
+        color var(--transition),
+        filter var(--transition);
+}
+
+.service-tile:hover .service-tile__icon {
+    transform: translateY(-3px) rotate(-5deg);
+    color: var(--color-accent);
+    filter: drop-shadow(0 0 14px rgba(199, 244, 58, 0.36));
+}
+
+.service-tile--text .service-tile__icon {
+    color: var(--color-accent);
+}
+
+/* arrow near title stays untouched */
+
+.service-tile__arrow i,
+.service-tile__arrow svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* mobile */
+
+@media (max-width: 720px) {
+    .service-tile .service-tile__icon {
+        top: 20px;
+        right: 20px;
+        width: 28px;
+        height: 28px;
+    }
+}
