@@ -350,102 +350,168 @@
                 </div>
             </section>
 
-            <section class="service-diagnostics section" id="fixes" aria-labelledby="fixes-title">
-                <div class="container-wide service-diagnostics__grid">
-                    <div class="section-heading">
-                        <p class="section-kicker section-kicker--light">What we fix</p>
-                        <h2 id="fixes-title">
-                            The paid traffic leaks that make campaigns feel unclear.
-                        </h2>
-                        <p>
-                            These diagnostic rows are designed to show what usually blocks Google Ads from
-                            becoming a reliable acquisition channel.
-                        </p>
-                    </div>
+        <section class="service-diagnostics diagnostics-editorial section" id="fixes" aria-labelledby="fixes-title">
+            <div class="container-wide">
+                <div class="diagnostics-editorial__head">
+                    <p class="section-kicker section-kicker--light">What we fix</p>
+        
+                    <h2 id="fixes-title">
+                        Paid traffic leaks that make campaigns feel unclear.
+                    </h2>
+        
+                    <p>
+                        We find the exact places where spend, clicks, keywords, landing pages, and tracking stop working
+                        as one connected acquisition path.
+                    </p>
 
-                    <div class="diagnostic-board">
-                        <article class="diagnostic-row is-open" data-diagnostic-row>
-                            <button class="diagnostic-row__button" type="button" aria-expanded="true"
-                                data-diagnostic-toggle>
-                                <i data-lucide="circle-dollar-sign" aria-hidden="true"></i>
-                                <span>Campaign spend feels unclear</span>
-                                <span class="diagnostic-row__arrow">
-                                    <i data-lucide="plus" aria-hidden="true"></i>
-                                </span>
-                            </button>
-
-                            <div class="diagnostic-row__content" data-diagnostic-content>
-                                Budget can disappear quickly when campaigns are grouped too broadly or reporting
-                                does not separate what is working from what is only spending.
-                            </div>
-                        </article>
-
-                        <article class="diagnostic-row" data-diagnostic-row>
-                            <button class="diagnostic-row__button" type="button" aria-expanded="false"
-                                data-diagnostic-toggle>
-                                <i data-lucide="mouse-pointer-2" aria-hidden="true"></i>
-                                <span>Clicks arrive but leads stay low</span>
-                                <span class="diagnostic-row__arrow">
-                                    <i data-lucide="plus" aria-hidden="true"></i>
-                                </span>
-                            </button>
-
-                            <div class="diagnostic-row__content" data-diagnostic-content hidden>
-                                Paid traffic needs a clear landing experience. When the message after the click
-                                feels disconnected, users hesitate instead of converting.
-                            </div>
-                        </article>
-
-                        <article class="diagnostic-row" data-diagnostic-row>
-                            <button class="diagnostic-row__button" type="button" aria-expanded="false"
-                                data-diagnostic-toggle>
-                                <i data-lucide="search" aria-hidden="true"></i>
-                                <span>Keywords are too broad</span>
-                                <span class="diagnostic-row__arrow">
-                                    <i data-lucide="plus" aria-hidden="true"></i>
-                                </span>
-                            </button>
-
-                            <div class="diagnostic-row__content" data-diagnostic-content hidden>
-                                Broad keyword logic often brings mixed intent. We separate demand by clarity,
-                                urgency, and fit so campaign structure becomes easier to manage.
-                            </div>
-                        </article>
-
-                        <article class="diagnostic-row" data-diagnostic-row>
-                            <button class="diagnostic-row__button" type="button" aria-expanded="false"
-                                data-diagnostic-toggle>
-                                <i data-lucide="panel-top" aria-hidden="true"></i>
-                                <span>Landing pages do not match intent</span>
-                                <span class="diagnostic-row__arrow">
-                                    <i data-lucide="plus" aria-hidden="true"></i>
-                                </span>
-                            </button>
-
-                            <div class="diagnostic-row__content" data-diagnostic-content hidden>
-                                Search intent, ad promise, page headline, proof, and CTA should feel like one
-                                connected path rather than separate pieces.
-                            </div>
-                        </article>
-
-                        <article class="diagnostic-row" data-diagnostic-row>
-                            <button class="diagnostic-row__button" type="button" aria-expanded="false"
-                                data-diagnostic-toggle>
-                                <i data-lucide="activity" aria-hidden="true"></i>
-                                <span>Tracking does not show enough</span>
-                                <span class="diagnostic-row__arrow">
-                                    <i data-lucide="plus" aria-hidden="true"></i>
-                                </span>
-                            </button>
-
-                            <div class="diagnostic-row__content" data-diagnostic-content hidden>
-                                Better tracking helps you see which campaigns create useful business actions,
-                                not just impressions, clicks, or disconnected platform numbers.
-                            </div>
-                        </article>
-                    </div>
+                    <span class="diagnostics-editorial__logo" aria-hidden="true">
+                        <img src="assets/icons/logo.svg" alt="" />
+                    </span>
                 </div>
-            </section>
+        
+                <div class="diagnostics-editorial__list" data-diagnostics-accordion>
+                    <article class="diagnostics-editorial__item" data-diagnostic-row>
+                        <button class="diagnostics-editorial__button" type="button" aria-expanded="false"
+                            data-diagnostic-toggle>
+                            <span class="diagnostics-editorial__index">01</span>
+        
+                            <span class="diagnostics-editorial__icon">
+                                <i data-lucide="circle-dollar-sign" aria-hidden="true"></i>
+                            </span>
+        
+                            <span class="diagnostics-editorial__title">
+                                Campaign spend feels unclear
+                            </span>
+        
+                            <span class="diagnostics-editorial__meta">Budget signal</span>
+        
+                            <span class="diagnostics-editorial__plus">
+                                <i data-lucide="plus" aria-hidden="true"></i>
+                            </span>
+                        </button>
+        
+                        <div class="diagnostics-editorial__content" data-diagnostic-content hidden>
+                            <p>
+                                Budget can disappear quickly when campaigns are grouped too broadly or reporting does not
+                                separate what is working from what is only spending.
+                            </p>
+                        </div>
+                    </article>
+        
+                    <article class="diagnostics-editorial__item" data-diagnostic-row>
+                        <button class="diagnostics-editorial__button" type="button" aria-expanded="false"
+                            data-diagnostic-toggle>
+                            <span class="diagnostics-editorial__index">02</span>
+        
+                            <span class="diagnostics-editorial__icon">
+                                <i data-lucide="mouse-pointer-2" aria-hidden="true"></i>
+                            </span>
+        
+                            <span class="diagnostics-editorial__title">
+                                Clicks arrive but leads stay low
+                            </span>
+        
+                            <span class="diagnostics-editorial__meta">Conversion path</span>
+        
+                            <span class="diagnostics-editorial__plus">
+                                <i data-lucide="plus" aria-hidden="true"></i>
+                            </span>
+                        </button>
+        
+                        <div class="diagnostics-editorial__content" data-diagnostic-content hidden>
+                            <p>
+                                Paid traffic needs a clear landing experience. When the message after the click feels
+                                disconnected, users hesitate instead of converting.
+                            </p>
+                        </div>
+                    </article>
+        
+                    <article class="diagnostics-editorial__item" data-diagnostic-row>
+                        <button class="diagnostics-editorial__button" type="button" aria-expanded="false"
+                            data-diagnostic-toggle>
+                            <span class="diagnostics-editorial__index">03</span>
+        
+                            <span class="diagnostics-editorial__icon">
+                                <i data-lucide="search" aria-hidden="true"></i>
+                            </span>
+        
+                            <span class="diagnostics-editorial__title">
+                                Keywords are too broad
+                            </span>
+        
+                            <span class="diagnostics-editorial__meta">Intent quality</span>
+        
+                            <span class="diagnostics-editorial__plus">
+                                <i data-lucide="plus" aria-hidden="true"></i>
+                            </span>
+                        </button>
+        
+                        <div class="diagnostics-editorial__content" data-diagnostic-content hidden>
+                            <p>
+                                Broad keyword logic often brings mixed intent. We separate demand by clarity, urgency,
+                                and fit so campaign structure becomes easier to manage.
+                            </p>
+                        </div>
+                    </article>
+        
+                    <article class="diagnostics-editorial__item" data-diagnostic-row>
+                        <button class="diagnostics-editorial__button" type="button" aria-expanded="false"
+                            data-diagnostic-toggle>
+                            <span class="diagnostics-editorial__index">04</span>
+        
+                            <span class="diagnostics-editorial__icon">
+                                <i data-lucide="panel-top" aria-hidden="true"></i>
+                            </span>
+        
+                            <span class="diagnostics-editorial__title">
+                                Landing pages do not match intent
+                            </span>
+        
+                            <span class="diagnostics-editorial__meta">Page alignment</span>
+        
+                            <span class="diagnostics-editorial__plus">
+                                <i data-lucide="plus" aria-hidden="true"></i>
+                            </span>
+                        </button>
+        
+                        <div class="diagnostics-editorial__content" data-diagnostic-content hidden>
+                            <p>
+                                Search intent, ad promise, page headline, proof, and CTA should feel like one connected
+                                path rather than separate pieces.
+                            </p>
+                        </div>
+                    </article>
+        
+                    <article class="diagnostics-editorial__item" data-diagnostic-row>
+                        <button class="diagnostics-editorial__button" type="button" aria-expanded="false"
+                            data-diagnostic-toggle>
+                            <span class="diagnostics-editorial__index">05</span>
+        
+                            <span class="diagnostics-editorial__icon">
+                                <i data-lucide="activity" aria-hidden="true"></i>
+                            </span>
+        
+                            <span class="diagnostics-editorial__title">
+                                Tracking does not show enough
+                            </span>
+        
+                            <span class="diagnostics-editorial__meta">Data clarity</span>
+        
+                            <span class="diagnostics-editorial__plus">
+                                <i data-lucide="plus" aria-hidden="true"></i>
+                            </span>
+                        </button>
+        
+                        <div class="diagnostics-editorial__content" data-diagnostic-content hidden>
+                            <p>
+                                Better tracking helps you see which campaigns create useful business actions, not just
+                                impressions, clicks, or disconnected platform numbers.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
 
         <section class="service-method method-open section" id="method" aria-labelledby="method-title">
             <div class="container-wide">
