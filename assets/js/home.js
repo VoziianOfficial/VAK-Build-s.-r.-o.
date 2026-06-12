@@ -363,9 +363,87 @@ function initResultsSlider() {
 
     if (!slides.length || !prevButton || !nextButton) return;
 
+    const counterFrames = new Map();
     let activeIndex = 0;
+    let hasAnimatedOnScroll = false;
 
-    const showSlide = (index) => {
+    slides.forEach((slide) => {
+        const number = slide.querySelector(".results-slide__top strong");
+
+        if (number && !number.dataset.originalValue) {
+            number.dataset.originalValue = number.textContent.trim();
+        }
+    });
+
+    const parseCounterValue = (text) => {
+        const match = text.match(/[\d,.]+/);
+
+        if (!match) return null;
+
+        const rawNumber = match[0];
+        const value = Number(rawNumber.replace(",", "."));
+        const prefix = text.slice(0, match.index);
+        const suffix = text.slice(match.index + rawNumber.length);
+
+        return {
+            value,
+            prefix,
+            suffix,
+            decimals: rawNumber.includes(".") ? rawNumber.split(".")[1].length : 0
+        };
+    };
+
+    const animateCounter = (number) => {
+        if (!number) return;
+
+        const originalText = number.dataset.originalValue || number.textContent.trim();
+        const parsed = parseCounterValue(originalText);
+
+        if (!parsed) return;
+
+        const previousFrame = counterFrames.get(number);
+
+        if (previousFrame) {
+            cancelAnimationFrame(previousFrame);
+        }
+
+        const duration = 1600;
+        const startTime = performance.now();
+
+        number.textContent = `${parsed.prefix}0${parsed.suffix}`;
+
+        const tick = (currentTime) => {
+            const progressValue = Math.min((currentTime - startTime) / duration, 1);
+            const easedProgress = 1 - Math.pow(1 - progressValue, 3);
+            const currentValue = parsed.value * easedProgress;
+
+            const formattedValue = parsed.decimals
+                ? currentValue.toFixed(parsed.decimals)
+                : Math.round(currentValue).toLocaleString("en-US");
+
+            number.textContent = `${parsed.prefix}${formattedValue}${parsed.suffix}`;
+
+            if (progressValue < 1) {
+                const frame = requestAnimationFrame(tick);
+                counterFrames.set(number, frame);
+            } else {
+                number.textContent = originalText;
+                counterFrames.delete(number);
+            }
+        };
+
+        const frame = requestAnimationFrame(tick);
+        counterFrames.set(number, frame);
+    };
+
+    const animateActiveCounter = () => {
+        const activeSlide = slides[activeIndex];
+        const number = activeSlide.querySelector(".results-slide__top strong");
+
+        animateCounter(number);
+    };
+
+    const showSlide = (index, shouldAnimate = true) => {
         activeIndex = (index + slides.length) % slides.length;
 
         slides.forEach((slide, slideIndex) => {
@@ -378,6 +456,10 @@ function initResultsSlider() {
         if (progress) {
             progress.style.transform = `translateX(${activeIndex * 100}%)`;
         }
+
+        if (shouldAnimate) {
+            window.setTimeout(animateActiveCounter, 80);
+        }
     };
 
     prevButton.addEventListener("click", () => {
@@ -388,5 +470,19 @@ function initResultsSlider() {
         showSlide(activeIndex + 1);
     });
 
-    showSlide(0);
+    const observer = new IntersectionObserver(
+        (entries) => {
+            if (entries[0].isIntersecting && !hasAnimatedOnScroll) {
+                hasAnimatedOnScroll = true;
+                animateActiveCounter();
+            }
+        },
+        {
+            threshold: 0.35
+        }
+    );
+
+    observer.observe(slider);
+
+    showSlide(0, false);
 }

@@ -4021,3 +4021,23 @@
         font-size: 12px;
     }
 }
+
+/* Results desktop title refinement */
+
+@media (min-width: 1121px) {
+    .results-case {
+        grid-template-columns: minmax(0, 1.08fr) minmax(390px, 0.72fr);
+        gap: clamp(46px, 5.6vw, 88px);
+    }
+
+    #results-title {
+        max-width: 900px;
+        font-size: clamp(40px, 4.7vw, 78px);
+        line-height: 0.96;
+        letter-spacing: -0.065em;
+    }
+
+    .results-case__copy p {
+        max-width: 660px;
+    }
+}
