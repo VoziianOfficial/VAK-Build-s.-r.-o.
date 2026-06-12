@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initSolutionDashboardCounters();
     initHomeForm();
     initMarqueePause();
+    initResultsSlider();
 });
 
 function initHomeTabs() {
@@ -349,4 +350,43 @@ function initSolutionDashboardCounters() {
             window.setTimeout(animateActivePanelCounter, 80);
         });
     });
+}
+
+function initResultsSlider() {
+    const slider = document.querySelector("[data-results-slider]");
+    if (!slider) return;
+
+    const slides = Array.from(slider.querySelectorAll("[data-results-slide]"));
+    const prevButton = slider.querySelector("[data-results-prev]");
+    const nextButton = slider.querySelector("[data-results-next]");
+    const progress = slider.querySelector("[data-results-progress]");
+
+    if (!slides.length || !prevButton || !nextButton) return;
+
+    let activeIndex = 0;
+
+    const showSlide = (index) => {
+        activeIndex = (index + slides.length) % slides.length;
+
+        slides.forEach((slide, slideIndex) => {
+            const isActive = slideIndex === activeIndex;
+
+            slide.hidden = !isActive;
+            slide.classList.toggle("is-active", isActive);
+        });
+
+        if (progress) {
+            progress.style.transform = `translateX(${activeIndex * 100}%)`;
+        }
+    };
+
+    prevButton.addEventListener("click", () => {
+        showSlide(activeIndex - 1);
+    });
+
+    nextButton.addEventListener("click", () => {
+        showSlide(activeIndex + 1);
+    });
+
+    showSlide(0);
 }
