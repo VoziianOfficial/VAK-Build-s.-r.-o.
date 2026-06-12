@@ -3,6 +3,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     initHomeTabs();
     initHomeCounters();
+    initSolutionDashboardCounters();
     initHomeForm();
     initMarqueePause();
 });
@@ -254,6 +255,98 @@ function initMarqueePause() {
 
         marquee.addEventListener("focusout", () => {
             marquee.classList.remove("is-paused");
+        });
+    });
+}
+
+function initSolutionDashboardCounters() {
+    const solutionSection = document.querySelector(".home-solutions");
+    const tabs = document.querySelectorAll("[data-home-tab]");
+    const stats = document.querySelectorAll(".solution-dashboard__stat strong");
+
+    if (!solutionSection || !stats.length) return;
+
+    stats.forEach((stat) => {
+        stat.dataset.originalValue = stat.textContent.trim();
+    });
+
+    const parseValue = (text) => {
+        const match = text.match(/[\d,.]+/);
+
+        if (!match) return null;
+
+        const rawNumber = match[0];
+        const value = Number(rawNumber.replace(",", "."));
+        const prefix = text.slice(0, match.index);
+        const suffix = text.slice(match.index + rawNumber.length);
+
+        return {
+            value,
+            prefix,
+            suffix,
+            decimals: rawNumber.includes(".") ? rawNumber.split(".")[1].length : 0
+        };
+    };
+
+    const animateCounter = (stat) => {
+        const originalText = stat.dataset.originalValue;
+        const parsed = parseValue(originalText);
+
+        if (!parsed) return;
+
+        const duration = 2000;
+        const startTime = performance.now();
+
+        stat.textContent = `${parsed.prefix}0${parsed.suffix}`;
+
+        const tick = (currentTime) => {
+            const progress = Math.min((currentTime - startTime) / duration, 1);
+            const easedProgress = 1 - Math.pow(1 - progress, 3);
+            const currentValue = parsed.value * easedProgress;
+
+            const formattedValue = parsed.decimals
+                ? currentValue.toFixed(parsed.decimals)
+                : Math.round(currentValue).toLocaleString("en-US");
+
+            stat.textContent = `${parsed.prefix}${formattedValue}${parsed.suffix}`;
+
+            if (progress < 1) {
+                requestAnimationFrame(tick);
+            } else {
+                stat.textContent = originalText;
+            }
+        };
+
+        requestAnimationFrame(tick);
+    };
+
+    const animateActivePanelCounter = () => {
+        const activePanel = document.querySelector(".solution-panel.is-active");
+
+        if (!activePanel) return;
+
+        const activeStats = activePanel.querySelectorAll(".solution-dashboard__stat strong");
+
+        activeStats.forEach(animateCounter);
+    };
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            if (entries[0].isIntersecting) {
+                animateActivePanelCounter();
+                observer.disconnect();
+            }
+        },
+        {
+            threshold: 0.35
+        }
+    );
+
+    observer.observe(solutionSection);
+
+    tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+            window.setTimeout(animateActivePanelCounter, 80);
         });
     });
 }
