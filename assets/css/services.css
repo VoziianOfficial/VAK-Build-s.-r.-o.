@@ -1427,3 +1427,31 @@
     }
 }
 
+/* Service pages — center all section h2 on tablet and mobile */
+
+@media (max-width: 1120px) {
+    main section h2 {
+        max-width: 900px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+    }
+
+    main section .section-heading {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    main section .section-kicker {
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 720px) {
+    main section h2 {
+        max-width: 100%;
+    }
+}
