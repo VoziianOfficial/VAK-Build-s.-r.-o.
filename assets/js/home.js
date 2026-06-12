@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initHomeForm();
     initMarqueePause();
     initResultsSlider();
+    initTestimonialsSlider();
 });
 
 function initHomeTabs() {
@@ -485,4 +486,43 @@ function initResultsSlider() {
     observer.observe(slider);
 
     showSlide(0, false);
+}
+
+function initTestimonialsSlider() {
+    const slider = document.querySelector("[data-testimonials-slider]");
+    if (!slider) return;
+
+    const slides = Array.from(slider.querySelectorAll("[data-testimonial-slide]"));
+    const prevButton = slider.querySelector("[data-testimonial-prev]");
+    const nextButton = slider.querySelector("[data-testimonial-next]");
+    const progress = slider.querySelector("[data-testimonial-progress]");
+
+    if (!slides.length || !prevButton || !nextButton) return;
+
+    let activeIndex = 0;
+
+    const showSlide = (index) => {
+        activeIndex = (index + slides.length) % slides.length;
+
+        slides.forEach((slide, slideIndex) => {
+            const isActive = slideIndex === activeIndex;
+
+            slide.hidden = !isActive;
+            slide.classList.toggle("is-active", isActive);
+        });
+
+        if (progress) {
+            progress.style.transform = `translateX(${activeIndex * 100}%)`;
+        }
+    };
+
+    prevButton.addEventListener("click", () => {
+        showSlide(activeIndex - 1);
+    });
+
+    nextButton.addEventListener("click", () => {
+        showSlide(activeIndex + 1);
+    });
+
+    showSlide(0);
 }
