@@ -4466,3 +4466,52 @@
     }
 }
 
+/* Service icon band — mobile one horizontal row */
+
+@media (max-width: 720px) {
+    .service-icon-band {
+        padding: 18px 0 22px;
+        overflow: hidden;
+    }
+
+    .service-icon-band .container-wide {
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .service-icon-band .container-wide::-webkit-scrollbar {
+        display: none;
+    }
+
+    .service-icon-band__grid {
+        display: flex;
+        grid-template-columns: none;
+        flex-wrap: nowrap;
+        gap: 10px;
+        width: max-content;
+        min-width: max-content;
+        padding: 0 2px;
+    }
+
+    .service-icon-band__item {
+        flex: 0 0 76px;
+        width: 76px;
+        min-height: 76px;
+        border-radius: 20px;
+    }
+
+    .service-icon-band__item i,
+    .service-icon-band__item svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .service-icon-band__item::after {
+        width: 9px;
+        height: 9px;
+        top: 10px;
+        right: 10px;
+    }
+}
