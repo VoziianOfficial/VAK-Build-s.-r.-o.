@@ -1,4 +1,4 @@
-/* Legal pages only */
+
 
 .legal-page {
     background: var(--color-light);
@@ -25,7 +25,7 @@
     transition: width 120ms linear;
 }
 
-/* Hero */
+
 
 .legal-hero {
     position: relative;
@@ -161,7 +161,7 @@
     line-height: 1.45;
 }
 
-/* Layout */
+
 
 .legal-content-section {
     position: relative;
@@ -242,7 +242,7 @@
     background: var(--color-accent-dark);
 }
 
-/* Article */
+
 
 .legal-article {
     position: relative;
@@ -425,7 +425,7 @@
     color: var(--color-accent-dark);
 }
 
-/* Legal CTA */
+
 
 .legal-bottom-note {
     display: grid;
@@ -457,7 +457,7 @@
     font-size: 15px;
 }
 
-/* Responsive */
+
 
 @media (max-width: 1020px) {
 
@@ -556,7 +556,7 @@
     }
 }
 
-/* Legal header — brand text visible */
+
 
 .legal-page .site-header .site-brand__name {
     color: var(--color-white) !important;
@@ -566,7 +566,7 @@
     color: rgba(255, 255, 255, 0.58) !important;
 }
 
-/* Legal pages — richer premium polish */
+
 
 .legal-hero {
     background:
@@ -612,7 +612,7 @@
         inset 0 0 20px rgba(199, 244, 58, 0.05);
 }
 
-/* hero meta card */
+
 
 .legal-hero__meta {
     overflow: hidden;
@@ -653,7 +653,7 @@
         inset 0 0 26px rgba(255, 255, 255, 0.045);
 }
 
-/* content background */
+
 
 .legal-content-section {
     background:
@@ -674,7 +674,7 @@
     pointer-events: none;
 }
 
-/* toc — richer sticky card */
+
 
 .legal-toc {
     background:
@@ -709,7 +709,7 @@
     transform: translateX(0);
 }
 
-/* article — more dimensional */
+
 
 .legal-article {
     background:
@@ -735,7 +735,7 @@
     pointer-events: none;
 }
 
-/* legal blocks — hover line, more alive */
+
 
 .legal-block {
     transition:
@@ -789,7 +789,7 @@
     transform: translateX(4px);
 }
 
-/* list dots richer */
+
 
 .legal-list li::before {
     box-shadow:
@@ -797,7 +797,7 @@
         0 0 18px rgba(126, 168, 13, 0.26);
 }
 
-/* callout */
+
 
 .legal-callout {
     position: relative;
@@ -823,7 +823,7 @@
     pointer-events: none;
 }
 
-/* bottom note */
+
 
 .legal-bottom-note {
     position: relative;
@@ -847,7 +847,7 @@
     border-radius: 50%;
 }
 
-/* animations */
+
 
 @keyframes legalOrbitFloat {
 
@@ -879,7 +879,7 @@
     }
 }
 
-/* mobile/tablet */
+
 
 @media (max-width: 1020px) {
     .legal-block:hover {

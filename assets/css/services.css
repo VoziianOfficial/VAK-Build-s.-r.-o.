@@ -1,11 +1,11 @@
-/* Service pages only */
+
 
 .service-page {
     background: var(--color-black);
     color: var(--color-white);
 }
 
-/* Service section rail */
+
 
 .service-mini-nav {
     position: fixed;
@@ -67,7 +67,7 @@
     transform: translate(0, -50%);
 }
 
-/* Service hero */
+
 
 .service-hero {
     min-height: 720px;
@@ -281,7 +281,7 @@
     letter-spacing: -0.05em;
 }
 
-/* Overview */
+
 
 .service-overview {
     background:
@@ -393,7 +393,7 @@
     letter-spacing: -0.05em;
 }
 
-/* Pain points / diagnostics */
+
 
 .service-diagnostics {
     background:
@@ -496,7 +496,7 @@
     font-size: 14px;
 }
 
-/* Method */
+
 
 .service-method {
     background:
@@ -583,7 +583,7 @@
 
 
 
-/* Result snapshot */
+
 
 .service-result {
     background:
@@ -747,7 +747,7 @@
     font-weight: 800;
 }
 
-/* Tools */
+
 
 .service-tools {
     padding: 46px 0;
@@ -815,7 +815,7 @@
     color: var(--color-white);
 }
 
-/* Related services */
+
 
 .service-related {
     background:
@@ -946,7 +946,7 @@
     width: 48px;
 }
 
-/* Service CTA */
+
 
 .service-cta {
     position: relative;
@@ -1015,7 +1015,7 @@
     }
 }
 
-/* Responsive */
+
 
 @media (max-width: 1180px) {
     .service-mini-nav {
@@ -1222,7 +1222,7 @@
     }
 }
 
-/* Service hero — bigger animated orbit around photo */
+
 
 .service-hero__visual {
     position: relative;
@@ -1283,7 +1283,7 @@
     }
 }
 
-/* tablet */
+
 
 @media (max-width: 1120px) {
     .service-hero__orbit {
@@ -1293,7 +1293,7 @@
     }
 }
 
-/* mobile */
+
 
 @media (max-width: 720px) {
     .service-hero__orbit {
@@ -1309,7 +1309,7 @@
     }
 }
 
-/* Service hero — center only title, text and buttons on tablet/mobile */
+
 
 @media (max-width: 1120px) {
 
@@ -1336,7 +1336,7 @@
     }
 }
 
-/* Service hero — mobile buttons in one row */
+
 
 @media (max-width: 560px) {
     .service-hero__actions {
@@ -1375,7 +1375,7 @@
     }
 }
 
-/* Service pages — center all section h2 on tablet and mobile */
+
 
 @media (max-width: 1120px) {
     main section h2 {
@@ -1404,7 +1404,7 @@
     }
 }
 
-/* Service method — open light route map, no card container */
+
 
 .service-method.method-open {
     position: relative;
@@ -1431,7 +1431,7 @@
     pointer-events: none;
 }
 
-/* head */
+
 
 .method-open__head {
     position: relative;
@@ -1468,7 +1468,7 @@
     line-height: 1.65;
 }
 
-/* formula */
+
 
 .method-open__formula {
     position: relative;
@@ -1497,7 +1497,7 @@
     background: linear-gradient(90deg, var(--color-accent-dark), rgba(126, 168, 13, 0.12));
 }
 
-/* open route map */
+
 
 .method-open__map {
     position: relative;
@@ -1669,7 +1669,7 @@
     transform: translateY(-3px);
 }
 
-/* tablet */
+
 
 @media (max-width: 1120px) {
     .service-method.method-open {
@@ -1755,7 +1755,7 @@
     }
 }
 
-/* mobile */
+
 
 @media (max-width: 720px) {
     .service-method.method-open {
@@ -1813,13 +1813,13 @@
     }
 }
 
-/* Method section — lower route map */
+
 
 .method-open__map {
     margin-top: 42px;
 }
 
-/* Method open — tablet/mobile compact route stack */
+
 
 @media (max-width: 1120px) {
     .service-method.method-open {
@@ -2033,7 +2033,7 @@
     }
 }
 
-/* Method title — stronger 3D depth */
+
 
 #method-title {
     color: var(--color-black);
@@ -2062,7 +2062,7 @@
 }
 
 
-/* Diagnostics editorial — premium dark accordion, no bulky cards */
+
 
 .service-diagnostics.diagnostics-editorial {
     position: relative;
@@ -2097,7 +2097,7 @@
     pointer-events: none;
 }
 
-/* top */
+
 
 .diagnostics-editorial__head {
     position: relative;
@@ -2134,7 +2134,7 @@
     line-height: 1.65;
 }
 
-/* list */
+
 
 .diagnostics-editorial__list {
     position: relative;
@@ -2173,7 +2173,7 @@
     transform: translateX(0);
 }
 
-/* button */
+
 
 .diagnostics-editorial__button {
     position: relative;
@@ -2301,7 +2301,7 @@
     line-height: 1.7;
 }
 
-/* tablet */
+
 
 @media (max-width: 1120px) {
     .service-diagnostics.diagnostics-editorial {
@@ -2336,7 +2336,7 @@
     }
 }
 
-/* mobile */
+
 
 @media (max-width: 720px) {
     .service-diagnostics.diagnostics-editorial {
@@ -2394,7 +2394,7 @@
     }
 }
 
-/* Diagnostics accordion — smoother open/close */
+
 
 [data-diagnostic-content] {
     overflow: hidden;
@@ -2408,7 +2408,7 @@
         opacity 260ms ease !important;
 }
 
-/* Diagnostics accordion — final smooth fix */
+
 
 .diagnostics-editorial__content,
 .diagnostic-row__content {
@@ -2425,7 +2425,7 @@
     display: none !important;
 }
 
-/* Diagnostics head — logo as background decor, no section stretching */
+
 
 .diagnostics-editorial__head {
     position: relative;
@@ -2524,7 +2524,7 @@
     }
 }
 
-/* Deliverables — full left image + clean editorial list */
+
 
 .service-deliverables.deliverables-editorial {
     position: relative;
@@ -2535,7 +2535,7 @@
     overflow: hidden;
 }
 
-/* full left side image, not a card */
+
 
 .deliverables-editorial__photo {
     position: absolute;
@@ -2580,7 +2580,7 @@
     pointer-events: none;
 }
 
-/* layout */
+
 
 .deliverables-editorial__inner {
     position: relative;
@@ -2596,7 +2596,7 @@
     padding: 64px 0 64px clamp(34px, 5vw, 82px);
 }
 
-/* right content */
+
 
 .deliverables-editorial__content h2 {
     max-width: 720px;
@@ -2623,7 +2623,7 @@
     line-height: 1.65;
 }
 
-/* small elegant list */
+
 
 .deliverables-editorial__list {
     display: grid;
@@ -2699,7 +2699,7 @@
     transform: translateX(4px);
 }
 
-/* tablet */
+
 
 @media (max-width: 1120px) {
     .service-deliverables.deliverables-editorial {
@@ -2737,7 +2737,7 @@
     }
 }
 
-/* mobile */
+
 
 @media (max-width: 720px) {
     .deliverables-editorial__photo {
@@ -2784,7 +2784,7 @@
     }
 }
 
-/* Deliverables right side — minimal premium output index */
+
 
 .deliverables-index {
     position: relative;
@@ -2923,7 +2923,7 @@
     transform: translateX(7px);
 }
 
-/* mobile */
+
 
 @media (max-width: 720px) {
     .deliverables-index {
@@ -2950,7 +2950,7 @@
         transform: none;
     }
 }
-/* Deliverables — no cards, clean editorial output lines */
+
 
 .deliverables-index,
 .deliverables-output {
@@ -3058,7 +3058,7 @@
     transform: translateX(-5px);
 }
 
-/* mobile */
+
 
 @media (max-width: 720px) {
     .deliverables-output {
@@ -3093,7 +3093,7 @@
     }
 }
 
-/* Service CTA — premium signal block */
+
 
 .service-cta.service-cta-signal {
     position: relative;
@@ -3306,7 +3306,7 @@
     }
 }
 
-/* tablet */
+
 
 @media (max-width: 1120px) {
     .service-cta.service-cta-signal {
@@ -3336,7 +3336,7 @@
     }
 }
 
-/* mobile */
+
 
 @media (max-width: 720px) {
     .service-cta.service-cta-signal {
@@ -3384,7 +3384,7 @@
     }
 }
 
-/* Service CTA — make title wider and section lower */
+
 
 .service-cta.service-cta-signal {
     padding: 70px 0;
@@ -3433,7 +3433,7 @@
     padding: 10px 0;
 }
 
-/* tablet */
+
 
 @media (max-width: 1120px) {
     .service-cta.service-cta-signal {
@@ -3455,7 +3455,7 @@
     }
 }
 
-/* mobile */
+
 
 @media (max-width: 720px) {
     .service-cta.service-cta-signal {
@@ -3494,7 +3494,7 @@
     }
 }
 
-/* Service CTA — move round button slightly left */
+
 
 .service-cta-signal__button {
     margin-right: clamp(22px, 3vw, 56px);
@@ -3506,7 +3506,7 @@
     }
 }
 
-/* Service CTA — custom tablet/mobile adaptation */
+
 
 @media (max-width: 1120px) {
     .service-cta.service-cta-signal {
@@ -3592,7 +3592,7 @@
     }
 }
 
-/* Mobile — button becomes a clean wide CTA, not a huge circle */
+
 
 @media (max-width: 720px) {
     .service-cta.service-cta-signal {
@@ -3697,7 +3697,7 @@
     }
 }
 
-/* Small phones — extra compact */
+
 
 @media (max-width: 430px) {
     .service-cta.service-cta-signal {
@@ -3722,7 +3722,7 @@
     }
 }
 
-/* Service marquee — light moving signal section */
+
 
 .service-marquee {
     position: relative;
@@ -3882,7 +3882,7 @@
     }
 }
 
-/* tablet */
+
 
 @media (max-width: 1120px) {
     .service-marquee {
@@ -3912,7 +3912,7 @@
     }
 }
 
-/* mobile */
+
 
 @media (max-width: 720px) {
     .service-marquee {
@@ -3964,7 +3964,7 @@
     }
 }
 
-/* Service marquee — no heading, compact version */
+
 
 .service-marquee {
     padding: 38px 0;
@@ -4013,7 +4013,7 @@
     }
 }
 
-/* Service overview line list — animated underline hovers */
+
 
 .service-line-list {
     border-top: 1px solid rgba(5, 6, 7, 0.14);
@@ -4094,7 +4094,7 @@
     filter: drop-shadow(0 0 14px rgba(126, 168, 13, 0.3));
 }
 
-/* mobile — без сдвига, чтобы не прыгало */
+
 
 @media (max-width: 720px) {
     .service-line-list__item {
@@ -4106,7 +4106,7 @@
     }
 }
 
-/* Service mini nav — same clean style as home page */
+
 
 .service-mini-nav {
     left: 24px;
@@ -4153,7 +4153,7 @@
     box-shadow: 0 14px 34px rgba(5, 6, 7, 0.22);
 }
 
-/* Service mini nav — visible on both light and dark backgrounds */
+
 
 .service-mini-nav {
     left: 24px;
@@ -4207,7 +4207,7 @@
     box-shadow: 0 14px 34px rgba(5, 6, 7, 0.24);
 }
 
-/* Dark icon band after hero */
+
 
 .service-icon-band {
     position: relative;
@@ -4355,7 +4355,7 @@
     filter: drop-shadow(0 0 20px rgba(199, 244, 58, 0.32));
 }
 
-/* tablet */
+
 
 @media (max-width: 1120px) {
     .service-icon-band {
@@ -4372,7 +4372,7 @@
     }
 }
 
-/* mobile */
+
 
 @media (max-width: 720px) {
     .service-icon-band {
@@ -4410,7 +4410,7 @@
     }
 }
 
-/* Service icon band — blend with hero */
+
 
 .service-icon-band {
     position: relative;
@@ -4450,7 +4450,7 @@
         rgba(255, 255, 255, 0.02);
 }
 
-/* tablet */
+
 
 @media (max-width: 1120px) {
     .service-icon-band {
@@ -4458,7 +4458,7 @@
     }
 }
 
-/* mobile */
+
 
 @media (max-width: 720px) {
     .service-icon-band {
@@ -4466,7 +4466,7 @@
     }
 }
 
-/* Service icon band — mobile one horizontal row */
+
 
 @media (max-width: 720px) {
     .service-icon-band {
@@ -4516,7 +4516,7 @@
     }
 }
 
-/* Related heading chips — absolute, same level as heading */
+
 
 .service-related .related-heading {
     position: relative;
@@ -4605,7 +4605,7 @@
         0 0 18px rgba(126, 168, 13, 0.26);
 }
 
-/* scattered positions */
+
 
 .related-heading__chip--ads {
     right: 210px;
@@ -4631,7 +4631,7 @@
     transform: rotate(-6deg);
 }
 
-/* hover */
+
 
 .related-heading__chip:hover {
     z-index: 4;
@@ -4658,7 +4658,7 @@
     transform: rotate(-3deg) translateY(-5px);
 }
 
-/* tablet/mobile — chips become normal row under title */
+
 
 @media (max-width: 1120px) {
     .related-heading__row {

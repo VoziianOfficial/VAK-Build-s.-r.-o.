@@ -32,7 +32,7 @@
     --transition: 220ms ease;
 }
 
-/* Reset */
+
 
 * {
     box-sizing: border-box;
@@ -102,7 +102,7 @@ ol {
     color: var(--color-black);
 }
 
-/* Accessibility */
+
 
 :focus-visible {
     outline: 2px solid var(--color-accent);
@@ -127,7 +127,7 @@ ol {
     transform: translateY(0);
 }
 
-/* Base layout */
+
 
 .page {
     position: relative;
@@ -252,7 +252,7 @@ ol {
     display: none !important;
 }
 
-/* Buttons */
+
 
 .btn {
     position: relative;
@@ -342,7 +342,7 @@ ol {
     background: rgba(255, 255, 255, 0.08);
 }
 
-/* Global icon style */
+
 
 [data-lucide],
 .lucide {
@@ -351,7 +351,7 @@ ol {
     stroke-width: 1.8;
 }
 
-/* Header */
+
 
 .site-header {
     position: fixed;
@@ -627,7 +627,7 @@ ol {
     transform: rotate(-45deg);
 }
 
-/* Mobile menu */
+
 
 .mobile-menu {
     position: fixed;
@@ -776,7 +776,7 @@ ol {
     color: var(--color-accent);
 }
 
-/* Footer */
+
 
 .site-footer {
     position: relative;
@@ -894,7 +894,7 @@ ol {
     color: var(--color-white);
 }
 
-/* Cookie banner */
+
 
 .cookie-banner {
     position: fixed;
@@ -961,7 +961,7 @@ ol {
     color: var(--color-white);
 }
 
-/* Section navigation */
+
 
 .section-rail {
     position: fixed;
@@ -1023,7 +1023,7 @@ ol {
     transform: translate(0, -50%);
 }
 
-/* Common decorative utilities */
+
 
 .grid-surface {
     background-image:
@@ -1071,7 +1071,7 @@ ol {
     width: 48px;
 }
 
-/* Responsive */
+
 
 @media (max-width: 1120px) {
     .site-nav {
@@ -1222,7 +1222,7 @@ ol {
 }
 
 
-/* HARD REMOVE ALL SQUARE GRID PATTERNS ON HOME PAGE */
+
 
 .home-hero::before,
 .home-hero::after,
@@ -1249,7 +1249,7 @@ ol {
     opacity: 0 !important;
 }
 
-/* HARD REMOVE ALL SQUARE GRID PATTERNS ON SERVICE PAGES */
+
 
 .service-hero::before,
 .service-hero::after,
@@ -1274,7 +1274,7 @@ ol {
     opacity: 0 !important;
 }
 
-/* Premium 3D depth for main H1 / H2 headings */
+
 
 .section-heading h1,
 .section-heading h2,
@@ -1303,7 +1303,7 @@ ol {
         0 28px 58px rgba(0, 0, 0, 0.24);
 }
 
-/* Lime accent words depth */
+
 
 .home-hero h1 span,
 .service-hero h1 span,
@@ -1314,7 +1314,7 @@ ol {
         0 18px 42px rgba(199, 244, 58, 0.16);
 }
 
-/* Section rail — visible on dark and light sections */
+
 
 .section-rail {
     isolation: isolate;
@@ -1346,7 +1346,7 @@ ol {
         0 0 22px rgba(199, 244, 58, 0.38);
 }
 
-/* when rail is over light sections */
+
 
 .section-rail.is-on-light .section-rail__link::before {
     border-color: rgba(5, 6, 7, 0.38);
@@ -1370,7 +1370,7 @@ ol {
         0 0 24px rgba(126, 168, 13, 0.34);
 }
 
-/* mobile: better hide rail if it crowds the page */
+
 
 @media (max-width: 1024px) {
     .section-rail {
