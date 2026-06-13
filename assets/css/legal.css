@@ -555,3 +555,376 @@
         border-radius: 22px;
     }
 }
+
+/* Legal header — brand text visible */
+
+.legal-page .site-header .site-brand__name {
+    color: var(--color-white) !important;
+}
+
+.legal-page .site-header .site-brand__label {
+    color: rgba(255, 255, 255, 0.58) !important;
+}
+
+/* Legal pages — richer premium polish */
+
+.legal-hero {
+    background:
+        radial-gradient(circle at 14% 18%, rgba(199, 244, 58, 0.18), transparent 26%),
+        radial-gradient(circle at 84% 16%, rgba(199, 244, 58, 0.14), transparent 30%),
+        radial-gradient(circle at 70% 86%, rgba(255, 255, 255, 0.07), transparent 28%),
+        linear-gradient(135deg, #030405 0%, #0b0e12 48%, #050607 100%);
+}
+
+.legal-hero::before {
+    opacity: 0.85;
+    background-size: 42px 42px;
+}
+
+.legal-hero::after {
+    width: 520px;
+    height: 520px;
+    border-color: rgba(199, 244, 58, 0.22);
+    box-shadow:
+        inset 0 0 90px rgba(199, 244, 58, 0.055),
+        0 0 80px rgba(199, 244, 58, 0.08);
+    animation: legalOrbitFloat 18s ease-in-out infinite;
+}
+
+.legal-hero h1 {
+    text-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.08),
+        0 18px 44px rgba(0, 0, 0, 0.45),
+        0 0 46px rgba(199, 244, 58, 0.14);
+}
+
+.legal-hero h1 span {
+    color: var(--color-accent);
+    text-shadow:
+        0 0 28px rgba(199, 244, 58, 0.28),
+        0 16px 36px rgba(0, 0, 0, 0.32);
+}
+
+.legal-hero__label {
+    box-shadow:
+        0 0 0 1px rgba(199, 244, 58, 0.08),
+        0 18px 38px rgba(0, 0, 0, 0.22),
+        inset 0 0 20px rgba(199, 244, 58, 0.05);
+}
+
+/* hero meta card */
+
+.legal-hero__meta {
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 18% 18%, rgba(199, 244, 58, 0.14), transparent 38%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.035));
+    box-shadow:
+        0 26px 70px rgba(0, 0, 0, 0.32),
+        inset 0 0 26px rgba(255, 255, 255, 0.035);
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+.legal-hero__meta::after {
+    content: "";
+    position: absolute;
+    left: -40%;
+    top: 0;
+    width: 34%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(199, 244, 58, 0.16),
+            transparent);
+    transform: skewX(-18deg);
+    animation: legalMetaShine 5.5s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.legal-hero__meta:hover {
+    transform: translateY(-5px);
+    border-color: rgba(199, 244, 58, 0.36);
+    box-shadow:
+        0 34px 86px rgba(0, 0, 0, 0.38),
+        0 0 42px rgba(199, 244, 58, 0.12),
+        inset 0 0 26px rgba(255, 255, 255, 0.045);
+}
+
+/* content background */
+
+.legal-content-section {
+    background:
+        radial-gradient(circle at 10% 8%, rgba(199, 244, 58, 0.22), transparent 22%),
+        radial-gradient(circle at 92% 34%, rgba(126, 168, 13, 0.12), transparent 28%),
+        linear-gradient(180deg, #f8f9f3 0%, #eceee5 100%);
+}
+
+.legal-content-section::before {
+    content: "";
+    position: absolute;
+    right: -160px;
+    top: 160px;
+    width: 420px;
+    height: 420px;
+    border: 1px dashed rgba(126, 168, 13, 0.16);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+/* toc — richer sticky card */
+
+.legal-toc {
+    background:
+        radial-gradient(circle at 18% 12%, rgba(199, 244, 58, 0.18), transparent 34%),
+        rgba(255, 255, 255, 0.62);
+    backdrop-filter: blur(16px);
+    box-shadow:
+        0 24px 70px rgba(5, 6, 7, 0.1),
+        inset 0 0 22px rgba(255, 255, 255, 0.38);
+}
+
+.legal-toc__link {
+    overflow: hidden;
+}
+
+.legal-toc__link::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(199, 244, 58, 0.2), transparent 62%);
+    opacity: 0;
+    transform: translateX(-18px);
+    transition:
+        opacity var(--transition),
+        transform var(--transition);
+    pointer-events: none;
+}
+
+.legal-toc__link:hover::after,
+.legal-toc__link.is-active::after {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* article — more dimensional */
+
+.legal-article {
+    background:
+        radial-gradient(circle at 88% 2%, rgba(199, 244, 58, 0.18), transparent 24%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.44)),
+        var(--color-light);
+    box-shadow:
+        0 34px 100px rgba(5, 6, 7, 0.12),
+        inset 0 0 30px rgba(255, 255, 255, 0.34);
+}
+
+.legal-article::after {
+    content: "LEGAL";
+    position: absolute;
+    right: -0.06em;
+    top: 28px;
+    color: rgba(5, 6, 7, 0.035);
+    font-family: var(--font-display);
+    font-size: clamp(90px, 14vw, 220px);
+    font-weight: 900;
+    line-height: 0.78;
+    letter-spacing: -0.1em;
+    pointer-events: none;
+}
+
+/* legal blocks — hover line, more alive */
+
+.legal-block {
+    transition:
+        background-color var(--transition),
+        padding-left var(--transition);
+}
+
+.legal-block::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 34px;
+    bottom: 34px;
+    width: 3px;
+    border-radius: var(--radius-pill);
+    background: var(--color-accent-dark);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform var(--transition);
+}
+
+.legal-block:hover {
+    padding-left: 18px;
+}
+
+.legal-block:hover::before {
+    transform: scaleY(1);
+}
+
+.legal-block h2 {
+    transition:
+        color var(--transition),
+        transform var(--transition),
+        text-shadow var(--transition);
+}
+
+.legal-block:hover h2 {
+    color: var(--color-accent-dark);
+    transform: translateX(4px);
+    text-shadow: 0 0 26px rgba(199, 244, 58, 0.2);
+}
+
+.legal-block__eyebrow {
+    transition:
+        color var(--transition),
+        transform var(--transition);
+}
+
+.legal-block:hover .legal-block__eyebrow {
+    color: var(--color-black);
+    transform: translateX(4px);
+}
+
+/* list dots richer */
+
+.legal-list li::before {
+    box-shadow:
+        0 0 0 6px rgba(199, 244, 58, 0.16),
+        0 0 18px rgba(126, 168, 13, 0.26);
+}
+
+/* callout */
+
+.legal-callout {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 12% 16%, rgba(199, 244, 58, 0.32), transparent 36%),
+        rgba(199, 244, 58, 0.14);
+    box-shadow:
+        0 18px 48px rgba(5, 6, 7, 0.08),
+        inset 0 0 24px rgba(255, 255, 255, 0.22);
+}
+
+.legal-callout::after {
+    content: "";
+    position: absolute;
+    right: 18px;
+    top: 18px;
+    width: 42px;
+    height: 42px;
+    border-top: 1px solid rgba(126, 168, 13, 0.32);
+    border-right: 1px solid rgba(126, 168, 13, 0.32);
+    border-radius: 0 16px 0 0;
+    pointer-events: none;
+}
+
+/* bottom note */
+
+.legal-bottom-note {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 86% 18%, rgba(199, 244, 58, 0.34), transparent 30%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.42));
+    box-shadow:
+        0 26px 80px rgba(5, 6, 7, 0.1),
+        inset 0 0 24px rgba(255, 255, 255, 0.28);
+}
+
+.legal-bottom-note::before {
+    content: "";
+    position: absolute;
+    right: -70px;
+    bottom: -90px;
+    width: 220px;
+    height: 220px;
+    border: 1px solid rgba(126, 168, 13, 0.18);
+    border-radius: 50%;
+}
+
+/* animations */
+
+@keyframes legalOrbitFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-18px) rotate(7deg);
+    }
+}
+
+@keyframes legalMetaShine {
+
+    0%,
+    55% {
+        left: -45%;
+        opacity: 0;
+    }
+
+    68% {
+        opacity: 1;
+    }
+
+    100% {
+        left: 120%;
+        opacity: 0;
+    }
+}
+
+/* mobile/tablet */
+
+@media (max-width: 1020px) {
+    .legal-block:hover {
+        padding-left: 0;
+    }
+
+    .legal-block:hover h2,
+    .legal-block:hover .legal-block__eyebrow {
+        transform: none;
+    }
+
+    .legal-block::before {
+        display: none;
+    }
+}
+
+@media (max-width: 720px) {
+    .legal-hero {
+        padding-top: 76px;
+    }
+
+    .legal-article::after {
+        top: 18px;
+        font-size: 92px;
+    }
+
+    .legal-content-section::before {
+        display: none;
+    }
+
+    .legal-hero__meta:hover {
+        transform: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .legal-hero::after,
+    .legal-hero__meta::after {
+        animation: none;
+    }
+
+    .legal-block,
+    .legal-block h2,
+    .legal-block__eyebrow {
+        transition: none;
+    }
+}
